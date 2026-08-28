@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "#components/*": ["components/*"],
+      "#constants/*": ["constants/*"],
+      "#stores/*": ["stores/*"],
+      "#hoc/*": ["hoc/*"],
+      "#windows/*": ["windows/*"]
+    }
+  },
+  "include": [
+    "src",
+    "components",
+    "constants",
+    "stores",
+    "hoc",
+    "windows"
+  ]
+}
