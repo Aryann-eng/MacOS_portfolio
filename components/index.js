@@ -1,4 +1,4 @@
 import Navbar from '#components/navbar'
 import Welcome from '#components/welcome';
-
-export {Navbar,Welcome}
+import Dock from '#components/dock';
+export {Navbar,Welcome,Dock}
