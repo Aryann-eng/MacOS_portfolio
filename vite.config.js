@@ -22,9 +22,9 @@ export default defineConfig({
         'constants'
       ),
 
-      '#stores': resolve(
+      '#store': resolve(
         dirname(fileURLToPath(import.meta.url)),
-        'stores'
+        'store'
       ),
 
       '#hoc': resolve(
