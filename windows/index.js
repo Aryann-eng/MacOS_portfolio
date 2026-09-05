@@ -5,6 +5,7 @@ import Finder from "./Finder";
 import Text from "./Text";
 import Image from "./Image";
 import Contact from "./Contact";
+import Home from "./Home";
 export {
     Terminal,
     Safari,
@@ -13,4 +14,5 @@ export {
     Text,
     Image,
     Contact,
+    Home,
 };
