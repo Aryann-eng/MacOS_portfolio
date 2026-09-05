@@ -4,27 +4,25 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
 
-
 gsap.registerPlugin(Draggable);
 
 const WindowWrapper = (Component, windowKey) => {
     const Wrapped = (props) => {
         const { focusWindow, windows } = useWindowStore();
 
-        const window = windows[windowKey];
+        const windowConfig = windows[windowKey];
 
-        if (!window) {
+        if (!windowConfig) {
             console.error(
                 `Window "${windowKey}" is not configured in WINDOW_CONFIG`
             );
             return null;
         }
 
-        const { isOpen, zIndex } = window;
-
+        const { isOpen, zIndex } = windowConfig;
+        console.log("WINDOW WRAPPER:", windowKey, isOpen, zIndex);
         const ref = useRef(null);
 
-        
         useGSAP(
             () => {
                 const el = ref.current;
@@ -52,7 +50,6 @@ const WindowWrapper = (Component, windowKey) => {
             }
         );
 
-        
         useGSAP(
             () => {
                 const el = ref.current;
@@ -61,10 +58,7 @@ const WindowWrapper = (Component, windowKey) => {
 
                 const [instance] = Draggable.create(el, {
                     type: "x,y",
-
-                    onPress: () => {
-                        focusWindow(windowKey);
-                    },
+                    onPress: () => focusWindow(windowKey),
                 });
 
                 return () => {
